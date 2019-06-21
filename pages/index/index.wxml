@@ -1,0 +1,41 @@
+<view class="UCenter-bg">
+    <image src="/images/logo.png" class="png" mode="widthFix"></image>
+    <view class="text-xl">查询小程序
+      <text class="text-df">By：Danns8</text>
+      <image src="/images/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+    </view>
+  </view>
+  <official-account></official-account>
+<scroll-view scroll-y class="scrollPage">
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="text-df text-grey cu-item">请在下方选择所需功能</view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/key/key" hover-class="none">
+        <image src="/images/keylogo.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">查询</text>
+      </navigator>
+    </view>
+
+        <view class="cu-item arrow">
+      <navigator class="content" url="/pages/mine/mine" hover-class="none">
+        <image src="{{avatarUrl}}" class="png" mode="aspectFit" class='circle'></image>
+        <text class="text-grey">个人中心（获得积分）</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/about/about" hover-class="none">
+        <image src="/images/logo.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">关于我们</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/log/log" hover-class="none">
+        <text class="icon-formfill text-green"></text>
+        <text class="text-grey">日志</text>
+      </navigator>
+    </view>
+    <!-- 下面是广告位 -->
+    <ad unit-id="banner广告位id"></ad>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

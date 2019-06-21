@@ -1,0 +1,22 @@
+<cu-custom bgColor="bg-gradual-key" isBack="{{true}}">
+  <view slot="backText">返回</view>
+</cu-custom>
+<scroll-view scroll-y class="scrollPage">
+  <image src='/images/key.png' mode='widthFix' class='png' style='width:100%;height:486rpx'></image>
+  <official-account></official-account>
+  <view class="search_con">
+    <form bindsubmit="formSubmit">
+      <input type="text" name="keyword" class="search_input" placeholder='请输入查询码' />
+      <button formType="submit" class="search_btn">查询</button>
+    </form>
+  </view>
+  <view wx:for="{{re}}" wx:key="re" class="search_result wz">
+    结果：
+    <view style='color:#f00;'>{{item.result}}</view>
+    <view style='color:#f00;'>{{item.jf}}</view>
+    <view style='color:green;'>{{item.title}}</view>
+  </view>
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <ad unit-id="Banner广告位id"></ad>
+  </view>
+</scroll-view>

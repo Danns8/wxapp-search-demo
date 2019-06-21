@@ -1,0 +1,46 @@
+<cu-custom bgColor="bg-red" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">个人中心</view>
+</cu-custom>
+<view class="UCenter-bg">
+<image src="{{avatarUrl}}" class="png" mode="widthFix" class='y'></image>
+    <text>\n</text>
+    <view class="text-xl">    
+    欢迎您，<open-data type="userNickName"></open-data>
+    </view>
+  </view>
+
+  <view class="cu-list menu card-menu margin-top">
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-circlefill text-grey"></text>
+        <text class="text-grey">积分信息</text>
+      </view>
+    </view>
+    
+
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-btn text-green"></text>
+        <text class="text-grey">剩余积分：<block wx:for="{{re}}">{{item.cs}}</block>
+        </text>
+      </view>
+      <view class='action'>
+    <button class='cu-btn round lines-red shadow' bindtap='refresh'>
+      查积分
+    </button>
+  </view>
+    </view>
+      <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-btn text-green"></text>
+        <text class="text-grey">看视频，得积分</text>
+      </view>
+      <view class="action">
+      <form bindsubmit="formSubmit">
+        <button class="cu-btn round bg-red shadow" formType="submit">
+          <text class="cuIcon-upload"></text> 看视频</button>
+          </form>
+      </view>
+    </view>
+    </view>
