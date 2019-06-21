@@ -68,8 +68,95 @@ banner:
       interstitialAd.onError((err) => { })
       interstitialAd.onClose(() => { })
     }
+    以及
+    if (interstitialAd) {
+            interstitialAd.show().catch((err) => {
+              console.error(err)
+            })
+          }
+## 删除激励式视频
     
-
+    删除mine.wxml中的
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-btn text-green"></text>
+        <text class="text-grey">看视频，得积分</text>
+      </view>
+      <view class="action">
+      <form bindsubmit="formSubmit">
+        <button class="cu-btn round bg-red shadow" formType="submit">
+          <text class="cuIcon-upload"></text> 看视频</button>
+          </form>
+      </view>
+    </view>
+    
+    删除mine.js中的
+    let videoAd = null
+    let rewardedVideoAd = null
+     if (wx.createRewardedVideoAd) {
+      videoAd = wx.createRewardedVideoAd({
+        adUnitId: 'adunit-0662b084b036f7a0'
+      })
+      videoAd.onLoad(() => { })
+      videoAd.onError((err) => { })
+      videoAd.onClose((res) => {
+        if (res && res.isEnded) {
+          var userinfo = wx.getStorageSync('userinfo')
+          var timestamp = Date.parse(new Date());
+          timestamp = timestamp / 1000;
+          //console.log("当前时间戳为：" + timestamp); 
+          var sza, sz;
+          sza = new Array(userinfo,timestamp,yan);
+          sz = sza.join("");
+          //console.log(sz);
+          var md5 = common.hex_md5(sz)
+          //console.log(md5);
+          wx.request({
+            url: 'https://wx.danns.top/api.php?cz=add',
+            data: {
+              openid: userinfo,
+              md5: md5,
+              sj: timestamp
+            },
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success: function (res) {
+              //console.log(res.data)
+            }
+          })
+          wx.showModal({
+            title: '成功',
+            content: '成功获得5积分',
+            showCancel: false,
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: '中途退出没有积分哦',
+            showCancel: false,
+          })
+        }
+       })
+    }
+    以及
+      formSubmit: function (e) {
+    if (videoAd) {
+      videoAd.show().catch(() => {
+        // 失败重试
+        videoAd.load()
+          .then(() => videoAd.show())
+          .catch(err => {
+            console.log('激励视频 广告显示失败')
+            wx.showModal({
+              title: '对不起',
+              content: '暂时没有适合您的视频，请稍后再试。',
+              showCancel: false,
+            })
+          })
+      })
+    } 
+  },
 
 
 
