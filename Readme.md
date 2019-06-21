@@ -95,7 +95,7 @@ banner:
     let rewardedVideoAd = null
      if (wx.createRewardedVideoAd) {
       videoAd = wx.createRewardedVideoAd({
-        adUnitId: 'adunit-0662b084b036f7a0'
+        adUnitId: ' '
       })
       videoAd.onLoad(() => { })
       videoAd.onError((err) => { })
@@ -112,7 +112,7 @@ banner:
           var md5 = common.hex_md5(sz)
           //console.log(md5);
           wx.request({
-            url: 'https://wx.danns.top/api.php?cz=add',
+            url: ' ',
             data: {
               openid: userinfo,
               md5: md5,
