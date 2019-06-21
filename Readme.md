@@ -14,7 +14,8 @@ ColorUI Github地址：https://github.com/weilanwl/ColorUI
   2.本Demo预留了微信小程序流量主广告位，不需要可自行去除。如需申请广告位，请参照：https://wximg.qq.com/wxp/pdftool/get.html?post_id=851<p>
   3.本Demo内置百度移动统计，不需要可自行去除。如需使用，请修改 /utils/mtj-wx-sdk.config.js 内的appkey为自己的，appkey申请地址：https://mtj.baidu.com/<p>
   4.首页和个人中心的背景图片请修改对应的wxss内的 UCenter-bg 中的 background-image: 后面的URL （建议使用base64）<p>
-  5.查询功能需要后端处理，请自行开发后端查询页面。<p>
+  5.查询功能需要后端处理，请根据自己的生产环境自行开发后端查询页面，并修改key.js中的请求url<p>
+  6.本Demo对所有请求均进行了签名验证，签名使用MD5加密，请尽量不要删除此功能，避免产生大量的非法请求。同时，别忘了修改js中的MD5密钥。
   
 # 如何去除不需要的部分
 
