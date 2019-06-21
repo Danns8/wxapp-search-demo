@@ -1,7 +1,8 @@
 # 前言
 
 本查询微信小程序界面基于ColorUI<p>
-ColorUI Github地址：https://github.com/weilanwl/ColorUI
+ColorUI Github地址：https://github.com/weilanwl/ColorUI<p>
+本Demo使用GPL 3.0授权协议，允许二次修改，可用于商业用途，但必须注明开发者信息。
   
 # 体验
 
