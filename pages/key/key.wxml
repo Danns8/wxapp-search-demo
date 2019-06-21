@@ -6,7 +6,7 @@
   <official-account></official-account>
   <view class="search_con">
     <form bindsubmit="formSubmit">
-      <input type="text" name="keyword" class="search_input" placeholder='请输入查询码' />
+      <input type="text" name="keyword" class="search_input" placeholder='请输入内容' />
       <button formType="submit" class="search_btn">查询</button>
     </form>
   </view>
