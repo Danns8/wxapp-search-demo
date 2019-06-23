@@ -74,7 +74,7 @@ banner:
               console.error(err)
             })
           }
-## 删除激励式视频
+激励式视频
     
     删除mine.wxml中的
     <view class="cu-item">
@@ -156,7 +156,7 @@ banner:
           })
       })
     } 
-  },
+    },
 
 
 
